@@ -1191,7 +1191,7 @@ def define_model_log_prob(model, model_loss, x, y, params_flattened_list, params
 
         if torch.cuda.is_available():
             del x_device, y_device
-            torch.cuda.empty_cache()
+            #torch.cuda.empty_cache()
 
         if predict:
             return (ll + l_prior/prior_scale), output
