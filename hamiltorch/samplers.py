@@ -273,8 +273,8 @@ def leapfrog(params, momentum, log_prob_func, steps=10, step_size=0.1, jitter=0.
             # log_prob.backward()
             p = collect_gradients(log_prob, p, pass_grad)
             # print(p.grad.std())
-            if torch.cuda.is_available():
-                torch.cuda.empty_cache()
+            #if torch.cuda.is_available():
+                #torch.cuda.empty_cache()
             return p.grad
         ret_params = []
         ret_momenta = []
