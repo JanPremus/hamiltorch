@@ -301,6 +301,8 @@ def _make_functional(module, params_box, params_offset):
                 setattr(self, name, types.MethodType(type(module)._forward_impl,self))
             if name == 'check_forward_args':
                 setattr(self, name, types.MethodType(type(module).check_forward_args,self))
+            if name == '_output_padding':
+                setattr(self, name, types.MethodType(type(module)._output_padding, self))
             if name == 'check_input':
                 setattr(self, name, types.MethodType(type(module).check_input,self))
             if name == 'check_hidden_size':
